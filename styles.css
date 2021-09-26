@@ -155,7 +155,7 @@ h1 {
 }
 
 
-@media (max-width: 575px) {
+@media (max-width: 375px) {
 
   body {
     background-image:url("./images/pattern-background-mobile.svg");
