@@ -1,0 +1,235 @@
+:root {
+/* Primary */
+--pale-blue: hsl(225, 100%, 94%);
+--bright-blue: hsl(245, 75%, 52%);
+--bright-blue-faded: hsla(245, 75%, 52%, 0.75);
+
+/* Neutral */
+--very-pale-blue: hsl(225, 100%, 98%);
+--desaturated-blue: hsl(224, 23%, 55%);
+--dark-blue: hsl(223, 47%, 23%);
+
+--card-shadow: hsla(224, 23%, 55%, 0.2);
+--button-shadow: hsla(245, 75%, 52%, 0.2);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+  background-image:url('/images/pattern-background-desktop.svg');
+  background-repeat: no-repeat;
+  background-color: var(--pale-blue);
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0.5em 0 0;
+}
+
+.card {
+  max-width: 28em;
+  background: #fff;
+  min-height: 43.75em;
+  border-radius: 1.2em;
+  text-align: center;
+  color: var(--dark-blue);
+  box-shadow: 0px 20px 20px 0px var(--card-shadow);
+}
+
+.card-hero {
+  background: url('/images/illustration-hero.svg') no-repeat center;
+  min-height: 13.75em;
+  background-size: cover;
+  border-radius: 1.2em 1.2em 0 0;
+}
+
+.card-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2em 1em;
+}
+
+.card-detail-summary {
+  font-weight: 900;
+  font-size: 1.8em;
+}
+
+.card-detail-desc {
+  font-size: 1em;
+  padding: 0 2em;
+  line-height: 1.5em;
+  color: var(--desaturated-blue);
+}
+
+.card-plan-section {
+  background: var(--very-pale-blue);
+  margin: 0.5em 1.5em 2.25em;
+  padding: 0.5em 1.5em;
+  border-radius: 0.8em;
+  max-width: 19em;
+  display: grid;
+  gap: 0.8em;
+  grid-template-columns: 1fr 3fr 4fr;
+  grid-template-rows: 2em 2em;
+  grid-template-areas:  "note plan change"
+                        "note price change";
+}
+
+.card-note {
+  grid-area: note;
+  align-self: center;
+}
+
+.card-plan-text {
+  grid-area: plan;
+  font-size: 1em;
+  font-weight: 900;
+  align-self: start;
+}
+
+.card-plan-price {
+  grid-area: price;
+  font-size: 1em;
+  /* font-weight: 700; */
+  color: var(--desaturated-blue);
+  align-self: end;
+}
+
+.card-plan-change {
+  grid-area: change;
+  font-size: 0.9em;
+  font-weight: 900;
+  color: var(--bright-blue);
+  justify-self: end;
+  align-self: center;
+}
+
+.card-plan-change:hover {
+  text-decoration: none;
+  color: var(--bright-blue-faded);
+}
+
+.button-proceed, .button-cancel {
+  border: none;
+  min-width: 20em;
+  padding: 1em 7em;
+  border-radius: 0.6em;
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 900;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.button-proceed {
+  background: var(--bright-blue);
+  color: var(--very-pale-blue);
+  margin-bottom: 1.25em;
+  box-shadow: 0 1em 1em 0.5em var(--button-shadow);
+  z-index: 1;
+}
+
+.button-proceed:hover {
+  background: var(--bright-blue-faded);
+}
+
+.button-cancel {
+  background: #fff;
+  color: var(--desaturated-blue);
+}
+
+.button-cancel:hover {
+  color: #000;
+}
+
+
+@media (max-width: 575px) {
+
+  body {
+    background-image:url('/images/pattern-background-mobile.svg');
+  }
+
+  .card {
+    max-width: 20em;
+    min-height: 34.5em;
+  }
+
+  .card-hero {
+    min-height: 10em;
+  }
+
+  .card-detail {
+    padding: 1em 1em;
+  }
+
+  .card-detail-summary {
+    font-size: 1.4em;
+    line-height: 100%;
+    display: block;
+  }
+
+  .card-detail-desc {
+    font-size: 0.9em;
+    padding: 0 1.5em;
+  }
+
+  .card-plan-section {
+    background: var(--very-pale-blue);
+    margin: 0.5em 1em 1.5em;
+    padding: 0.5em 0.5em;
+    gap: 0.6em;
+    grid-template-columns: 2.5fr 4fr 4fr;
+  }
+
+  .card-plan-text {
+    font-size: 0.9em;
+  }
+
+  .card-plan-price {
+    font-size: 0.9em;
+  }
+
+  .card-plan-change {
+    font-size: 0.8em;
+  }
+
+
+  .button-proceed, .button-cancel {
+    padding: 1.25em 1em;
+    font-size: 0.8em;
+    letter-spacing: 0.1ch;
+  }
+
+  .button-proceed {
+    margin-bottom: 1em;
+    box-shadow: 0 2em 1.5em var(--button-shadow);
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image:none;
+  }
+}
+
+
+
+.attribution {
+  font-size: 11px; text-align: center;
+}
+
+.attribution a {
+    color: var(--color-secondary-400);
+}
